@@ -40,12 +40,21 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'posts',
-    'users',
-    'rest_framework',
+    'django.contrib.sites',
     'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'dj_rest_auth.registration',
+
+    'rest_framework',
     'dj_rest_auth',
+
+    # 'allauth',
+    # 'posts',
+    # 'users',
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -119,6 +128,24 @@ USE_L10N = True
 
 USE_TZ = True
 
+# for rest framework
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
+    )
+}
+
+# for all auth
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# django settings
+APPEND_SLASH = False
+
+# for dj-rest auth
+REST_USE_JWT = True
+JWT_AUTH_COOKIE = 'jwt-cookie'
+JWT_AUTH_REFRESH_COOKIE = 'refresh-token-cookie'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/

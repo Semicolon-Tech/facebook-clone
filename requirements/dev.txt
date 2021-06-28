@@ -1,0 +1,6 @@
+-r base.txt
+
+#for tests
+pytest==6.2.4
+pytest-django==4.1.0
+pytest-cov==2.11.1

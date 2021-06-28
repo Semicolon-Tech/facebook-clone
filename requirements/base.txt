@@ -1,0 +1,15 @@
+# for api views and logic
+Django==3.2.4
+djangorestframework==3.12.4
+
+pillow==8.2.0 # for images
+whitenoise==5.2.0 # for static files
+cloudinary==1.26.0 # for static and media files
+python-decouple==3.4 # for configurations and env
+
+# for database (postgres)
+dj-database-url==0.5.0
+
+# for authentication
+django-allauth==0.44.0
+dj-rest-auth==2.1.7
